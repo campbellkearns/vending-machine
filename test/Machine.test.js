@@ -26,4 +26,25 @@ describe('The vending machine', () => {
     // assert
     expect(vendingMachine.seeSelections()).toEqual([snack])
   })
+
+  // someone attempts to stock without inventory
+  // it('stocks nothing if there is no inventory passed', () => {
+  //   // setup
+  //   const vendingMachine = new Machine()
+
+  //   // exercise
+  //   vendingMachine.stock()
+
+  //   // assertion
+  //   expect(vendingMachine.seeSelections()).toEqual([])
+  // })
+
+  it('displays an error if no inventory comes with stocking', () => {
+    // setup
+    const vendingMachine = new Machine()
+    const displayMessage = "please do not troll. you cannot stock nothing."
+
+    // exercise & assert
+    expect(() => vendingMachine.stock()).toThrow(displayMessage)
+  })
 })

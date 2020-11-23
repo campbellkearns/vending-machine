@@ -8,6 +8,9 @@ class Machine {
   }
 
   stock(inventory) {
+    if(inventory == undefined) {
+      throw Error("please do not troll. you cannot stock nothing.")
+    }
     this.snacks = inventory
   }
 }
