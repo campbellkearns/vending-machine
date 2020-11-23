@@ -11,4 +11,19 @@ describe('The vending machine', () => {
 
     // teardown, not needed
   })
+
+  it('can stock one snack', () => {
+    // setup
+    const vendingMachine = new Machine();
+    const snack = {
+      name: 'macadamia nuts',
+      price: 250
+    }
+
+    // exercise
+    vendingMachine.stock([snack])
+
+    // assert
+    expect(vendingMachine.seeSelections()).toEqual([snack])
+  })
 })

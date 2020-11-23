@@ -1,10 +1,14 @@
 class Machine {
   constructor() {
-
+    this.snacks = []
   }
 
   seeSelections() {
-    return []
+    return this.snacks
+  }
+
+  stock(inventory) {
+    this.snacks = inventory
   }
 }
 
